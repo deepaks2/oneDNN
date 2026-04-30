@@ -21,7 +21,10 @@
 
 #include "gpu/intel/jit/binary_format.hpp"
 
+#include "oneapi/dnnl/dnnl_config.h"
+
 #include "common/utils.hpp"
+#include "common/verbose.hpp"
 #include "gpu/intel/compute/utils.hpp"
 #include "gpu/intel/engine.hpp"
 #include "gpu/intel/jit/generator.hpp"
@@ -362,6 +365,50 @@ status_t gpu_supports_binary_format(bool *ok, impl::engine_t *engine) {
 
     *ok = (result != 0);
 
+    return status::success;
+}
+
+status_t init_mayiuse_ngen_kernels(impl::engine_t *engine,
+        compute::gpu_arch_t arch, bool &mayiuse_ngen_kernels) {
+    mayiuse_ngen_kernels = false;
+
+    // Bail out if the detected architecture is disabled at build time.
+    bool arch_enabled = false;
+    switch (arch) {
+        case compute::gpu_arch_t::xe_lp:
+            arch_enabled = BUILD_PRIMITIVE_GPU_ISA_ALL || BUILD_XELP;
+            break;
+        // xe_hp is intentionally omitted: no publicly released hardware.
+        case compute::gpu_arch_t::xe_hpg:
+            arch_enabled = BUILD_PRIMITIVE_GPU_ISA_ALL || BUILD_XEHPG;
+            break;
+        case compute::gpu_arch_t::xe_hpc:
+            arch_enabled = BUILD_PRIMITIVE_GPU_ISA_ALL || BUILD_XEHPC;
+            break;
+        case compute::gpu_arch_t::xe2:
+            arch_enabled = BUILD_PRIMITIVE_GPU_ISA_ALL || BUILD_XE2;
+            break;
+        case compute::gpu_arch_t::xe3:
+            arch_enabled = BUILD_PRIMITIVE_GPU_ISA_ALL || BUILD_XE3;
+            break;
+        case compute::gpu_arch_t::xe3p:
+            arch_enabled = BUILD_PRIMITIVE_GPU_ISA_ALL || BUILD_XE3P;
+            break;
+        default: break;
+    }
+    if (!arch_enabled) return status::success;
+
+    if (arch <= compute::gpu_arch_t::xe3) {
+        auto status = gpu_supports_binary_format(&mayiuse_ngen_kernels, engine);
+        if (status != status::success) {
+            VWARN(common, runtime,
+                    "nGEN fallback (gpu does not support binary format "
+                    "kernels)");
+            mayiuse_ngen_kernels = false;
+        }
+    } else {
+        mayiuse_ngen_kernels = true;
+    }
     return status::success;
 }
 
