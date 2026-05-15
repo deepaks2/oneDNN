@@ -724,6 +724,7 @@ public:
         Xbyak_aarch64::ZRegS z_tmp(vmm.getIdx());
         Xbyak_aarch64::VReg4S v_tmp(vmm.getIdx());
         Xbyak_aarch64::WReg w_tmp(reg_tmp.getIdx());
+
         mov_imm(w_tmp, float2int(value));
         if (isSVE) /* SVE is available. */
             dup(z_tmp, w_tmp);
