@@ -40,10 +40,19 @@ status_t stream_t::init() {
         mdapi_helper_ = utils::make_unique<mdapi_helper_t>();
     }
 
+    // Enables profiling capabilities to allow the verbose mode to print
+    // profiling info using device measured times.
+    // The verbose profiler state is fixed at stream initialization and does not
+    // respond to runtime changes made via set_dnnl_verbose().
+    // TODO: allow runtime control of the asynchronous verbose mode via
+    // set_dnnl_verbose()
+    CHECK(init_verbose_profiler());
+
     if (is_verbose_profiler_enabled()) {
         verbose_profiler_
                 = utils::make_unique<xpu::ocl::verbose_profiler_t>(this);
     }
+
     // Restore queue on successful exit, otherwise queue may be released
     // without retain
     cl_command_queue queue = impl()->queue();
@@ -140,13 +149,14 @@ status_t stream_t::run_verbose_profiler(
 status_t stream_t::copy(const memory_storage_t &src,
         const memory_storage_t &dst, size_t size, const xpu::event_t &deps,
         xpu::event_t &out_dep) {
-    return impl()->copy(this, src, dst, size, deps, out_dep, profiler_.get());
+    return impl()->copy(this, src, dst, size, deps, out_dep, profiler_.get(),
+            verbose_profiler_.get());
 }
 
 status_t stream_t::fill(const memory_storage_t &dst, uint8_t pattern,
         size_t size, const xpu::event_t &deps, xpu::event_t &out_dep) {
-    return impl()->fill(
-            this, dst, pattern, size, deps, out_dep, profiler_.get());
+    return impl()->fill(this, dst, pattern, size, deps, out_dep,
+            profiler_.get(), verbose_profiler_.get());
 }
 
 status_t stream_t::barrier() {

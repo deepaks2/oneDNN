@@ -60,19 +60,21 @@ public:
     status_t copy(impl::stream_t *stream, const memory_storage_t &src,
             const memory_storage_t &dst, size_t size, const xpu::event_t &deps,
             xpu::event_t &out_dep,
-            xpu::stream_profiler_t *stream_profiler = nullptr);
+            xpu::stream_profiler_t *stream_profiler = nullptr,
+            xpu::verbose_profiler_t *verbose_profiler = nullptr);
 
     status_t fill(impl::stream_t *stream, const memory_storage_t &dst,
             uint8_t pattern, size_t size, const xpu::event_t &deps,
             xpu::event_t &out_dep,
-            xpu::stream_profiler_t *stream_profiler = nullptr);
+            xpu::stream_profiler_t *stream_profiler = nullptr,
+            xpu::verbose_profiler_t *verbose_profiler = nullptr);
 
     status_t barrier();
 
     bool supports_verbose_profiling(engine_kind_t eng) const override {
-        // verbose profiling support is only for in-order OpenCL queues
+        if (!get_verbose(verbose_t::exec_profile)) return false;
         if (eng != engine_kind::gpu) return false;
-        if (!is_profiling_enabled()) return false;
+        // verbose profiling support is only for in-order queues
         if (flags() & stream_flags::out_of_order) return false;
         return true;
     }
