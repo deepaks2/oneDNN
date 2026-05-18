@@ -40,6 +40,10 @@ status_t stream_t::init() {
     if (is_profiling_enabled())
         profiler_ = utils::make_unique<xpu::sycl::stream_profiler_t>(this);
 
+    if (is_verbose_profiler_enabled())
+        verbose_profiler_
+                = utils::make_unique<xpu::sycl::verbose_profiler_t>(this);
+
     const auto &sycl_engine_impl
             = *utils::downcast<const xpu::sycl::engine_impl_t *>(
                     engine()->impl());
@@ -89,11 +93,22 @@ status_t stream_t::init() {
 
 void stream_t::before_exec_hook() {
     if (is_profiling_enabled()) profiler_->start_profiling();
+    if (is_verbose_profiler_enabled())
+        verbose_profiler_->update_primitive_stamp();
 }
 
 void stream_t::after_exec_hook() {
     sycl_ctx().set_deps(xpu::sycl::event_t());
     if (is_profiling_enabled()) profiler_->stop_profiling();
+    if (is_verbose_profiler_enabled())
+        verbose_profiler_->check_for_completed_primitives();
+}
+
+status_t stream_t::run_verbose_profiler(
+        std::string &pd_info, double start_ms) const {
+    if (!is_verbose_profiler_enabled()) return status::invalid_arguments;
+    CHECK(verbose_profiler_->add_to_pending_primitive_list(start_ms, pd_info));
+    return status::success;
 }
 
 // The following code needs sycl::queue::ext_oneapi_get_graph(), but it may
