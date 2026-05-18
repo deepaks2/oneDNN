@@ -40,6 +40,14 @@ status_t stream_t::init() {
     if (is_profiling_enabled())
         profiler_ = utils::make_unique<xpu::sycl::stream_profiler_t>(this);
 
+    // Enables profiling capabilities to allow the verbose mode to print
+    // profiling info using device measured times.
+    // The verbose profiler state is fixed at stream initialization and does not
+    // respond to runtime changes made via set_dnnl_verbose().
+    // TODO: allow runtime control of the asynchronous verbose mode via
+    // set_dnnl_verbose()
+    CHECK(init_verbose_profiler());
+
     if (is_verbose_profiler_enabled())
         verbose_profiler_
                 = utils::make_unique<xpu::sycl::verbose_profiler_t>(this);
