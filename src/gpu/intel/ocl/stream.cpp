@@ -74,7 +74,7 @@ status_t stream_t::init() {
     }
     CHECK(impl()->set_queue(queue));
 
-    if (is_profiling_enabled()) {
+    if (is_profiling_enabled() || is_verbose_profiler_enabled()) {
         cl_command_queue_properties props;
         OCL_CHECK(xpu::ocl::clGetCommandQueueInfo(impl()->queue(),
                 CL_QUEUE_PROPERTIES, sizeof(props), &props, nullptr));
@@ -101,7 +101,8 @@ cl_command_queue stream_t::create_queue(
     const bool is_out_of_order = (flags() & stream_flags::out_of_order);
 
     cl_command_queue_properties queue_props {};
-    if (is_profiling_enabled()) queue_props |= CL_QUEUE_PROFILING_ENABLE;
+    if (is_profiling_enabled() || is_verbose_profiler_enabled())
+        queue_props |= CL_QUEUE_PROFILING_ENABLE;
     if (is_out_of_order) queue_props |= CL_QUEUE_OUT_OF_ORDER_EXEC_MODE_ENABLE;
 #ifdef CL_VERSION_2_0
     cl_queue_properties props[] = {CL_QUEUE_PROPERTIES, queue_props, 0};
