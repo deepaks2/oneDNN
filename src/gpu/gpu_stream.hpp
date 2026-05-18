@@ -46,10 +46,16 @@ public:
     }
     xpu::stream_profiler_t &profiler() { return *profiler_; }
 
+    virtual const xpu::verbose_profiler_t &verbose_profiler() const {
+        return *verbose_profiler_;
+    }
+    xpu::verbose_profiler_t &verbose_profiler() { return *verbose_profiler_; }
+
     virtual double get_freq(const xpu::event_t &event) const { return 0.0; }
 
 protected:
     std::unique_ptr<xpu::stream_profiler_t> profiler_;
+    std::unique_ptr<xpu::verbose_profiler_t> verbose_profiler_;
 };
 
 } // namespace gpu
