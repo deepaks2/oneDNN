@@ -43,6 +43,14 @@ bool is_data_supported(cpu_isa_t isa, data_type_t data_type) {
     return !(data_type == data_type::bf16);
 }
 
+bool is_supported(cpu_isa_t isa, const dnnl::impl::memory_desc_t &src1_desc,
+        const memory_desc_wrapper &dst_d,
+        const bcast_set_t &supported_strategy_set) {
+    // FIXME: address SVE correctness issues
+    return isa == asimd && is_data_supported(isa, src1_desc.data_type)
+            && is_bcast_supported(src1_desc, dst_d, supported_strategy_set);
+}
+
 static bool src1_desc_layout_same_as_dst_d(
         const dnnl::impl::memory_desc_t &src1_desc,
         const memory_desc_wrapper &dst_d) {
@@ -78,13 +86,6 @@ bool is_bcast_supported(const dnnl::impl::memory_desc_t &src1_desc,
     }
 
     return bcast_type != broadcasting_strategy_t::unsupported;
-}
-
-bool is_supported(cpu_isa_t isa, const dnnl::impl::memory_desc_t &src1_desc,
-        const memory_desc_wrapper &dst_d,
-        const bcast_set_t &supported_strategy_set) {
-    return is_data_supported(isa, src1_desc.data_type)
-            && is_bcast_supported(src1_desc, dst_d, supported_strategy_set);
 }
 
 bool binary_args_broadcast_supported(const post_ops_t &post_ops,
