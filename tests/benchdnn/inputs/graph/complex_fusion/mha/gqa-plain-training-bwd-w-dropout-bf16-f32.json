@@ -52,40 +52,16 @@
         {
           "id": 100,
           "dtype": "bf16",
-          "shape": [
-            2,
-            2,
-            8,
-            256,
-            64
-          ],
-          "stride": [
-            262144,
-            131072,
-            16384,
-            64,
-            1
-          ],
+          "shape": [1, 1, 2, 16, 32],
+          "stride": [1024, 1024, 512, 32, 1],
           "layout_type": "strided",
           "property_type": "undef"
         },
         {
           "id": 101,
           "dtype": "bf16",
-          "shape": [
-            2,
-            2,
-            1,
-            256,
-            64
-          ],
-          "stride": [
-            32768,
-            16384,
-            16384,
-            64,
-            1
-          ],
+          "shape": [1, 1, 1, 16, 32],
+          "stride": [512, 512, 512, 32, 1],
           "layout_type": "strided",
           "property_type": "undef"
         }
@@ -94,20 +70,8 @@
         {
           "id": 1,
           "dtype": "f32",
-          "shape": [
-            2,
-            2,
-            8,
-            256,
-            256
-          ],
-          "stride": [
-            1048576,
-            524288,
-            65536,
-            256,
-            1
-          ],
+          "shape": [1, 1, 2, 16, 16],
+          "stride": [512, 512, 256, 16, 1],
           "layout_type": "strided",
           "property_type": "undef"
         }
@@ -127,20 +91,8 @@
         {
           "id": 1,
           "dtype": "f32",
-          "shape": [
-            2,
-            2,
-            8,
-            256,
-            256
-          ],
-          "stride": [
-            1048576,
-            524288,
-            65536,
-            256,
-            1
-          ],
+          "shape": [1, 1, 2, 16, 16],
+          "stride": [512, 512, 256, 16, 1],
           "layout_type": "strided",
           "property_type": "undef"
         },
@@ -161,20 +113,8 @@
         {
           "id": 3,
           "dtype": "f32",
-          "shape": [
-            2,
-            2,
-            8,
-            256,
-            256
-          ],
-          "stride": [
-            1048576,
-            524288,
-            65536,
-            256,
-            1
-          ],
+          "shape": [1, 1, 2, 16, 16],
+          "stride": [512, 512, 256, 16, 1],
           "layout_type": "strided",
           "property_type": "undef"
         }
@@ -194,40 +134,16 @@
         {
           "id": 3,
           "dtype": "f32",
-          "shape": [
-            2,
-            2,
-            8,
-            256,
-            256
-          ],
-          "stride": [
-            1048576,
-            524288,
-            65536,
-            256,
-            1
-          ],
+          "shape": [1, 1, 2, 16, 16],
+          "stride": [512, 512, 256, 16, 1],
           "layout_type": "strided",
           "property_type": "undef"
         },
         {
           "id": 103,
           "dtype": "bf16",
-          "shape": [
-            2,
-            2,
-            8,
-            256,
-            256
-          ],
-          "stride": [
-            1048576,
-            524288,
-            65536,
-            256,
-            1
-          ],
+          "shape": [1, 1, 2, 16, 16],
+          "stride": [512, 512, 256, 16, 1],
           "layout_type": "strided",
           "property_type": "undef"
         }
@@ -236,20 +152,8 @@
         {
           "id": 5,
           "dtype": "f32",
-          "shape": [
-            2,
-            2,
-            8,
-            256,
-            256
-          ],
-          "stride": [
-            1048576,
-            524288,
-            65536,
-            256,
-            1
-          ],
+          "shape": [1, 1, 2, 16, 16],
+          "stride": [512, 512, 256, 16, 1],
           "layout_type": "strided",
           "property_type": "undef"
         }
@@ -269,40 +173,16 @@
         {
           "id": 5,
           "dtype": "f32",
-          "shape": [
-            2,
-            2,
-            8,
-            256,
-            256
-          ],
-          "stride": [
-            1048576,
-            524288,
-            65536,
-            256,
-            1
-          ],
+          "shape": [1, 1, 2, 16, 16],
+          "stride": [512, 512, 256, 16, 1],
           "layout_type": "strided",
           "property_type": "undef"
         },
         {
           "id": 8,
           "dtype": "f32",
-          "shape": [
-            2,
-            2,
-            8,
-            256,
-            1
-          ],
-          "stride": [
-            4096,
-            2048,
-            256,
-            1,
-            1
-          ],
+          "shape": [1, 1, 2, 16, 1],
+          "stride": [32, 32, 16, 1, 1],
           "layout_type": "strided",
           "property_type": "undef"
         }
@@ -311,20 +191,8 @@
         {
           "id": 7,
           "dtype": "f32",
-          "shape": [
-            2,
-            2,
-            8,
-            256,
-            256
-          ],
-          "stride": [
-            1048576,
-            524288,
-            65536,
-            256,
-            1
-          ],
+          "shape": [1, 1, 2, 16, 16],
+          "stride": [512, 512, 256, 16, 1],
           "layout_type": "strided",
           "property_type": "undef"
         }
@@ -339,20 +207,8 @@
         {
           "id": 7,
           "dtype": "f32",
-          "shape": [
-            2,
-            2,
-            8,
-            256,
-            256
-          ],
-          "stride": [
-            1048576,
-            524288,
-            65536,
-            256,
-            1
-          ],
+          "shape": [1, 1, 2, 16, 16],
+          "stride": [512, 512, 256, 16, 1],
           "layout_type": "strided",
           "property_type": "undef"
         }
@@ -361,20 +217,8 @@
         {
           "id": 9,
           "dtype": "f32",
-          "shape": [
-            2,
-            2,
-            8,
-            256,
-            256
-          ],
-          "stride": [
-            1048576,
-            524288,
-            65536,
-            256,
-            1
-          ],
+          "shape": [1, 1, 2, 16, 16],
+          "stride": [512, 512, 256, 16, 1],
           "layout_type": "strided",
           "property_type": "undef"
         }
@@ -402,40 +246,16 @@
         {
           "id": 105,
           "dtype": "bf16",
-          "shape": [
-            2,
-            2,
-            8,
-            256,
-            64
-          ],
-          "stride": [
-            262144,
-            131072,
-            16384,
-            64,
-            1
-          ],
+          "shape": [1, 1, 2, 16, 32],
+          "stride": [1024, 1024, 512, 32, 1],
           "layout_type": "strided",
           "property_type": "undef"
         },
         {
           "id": 104,
           "dtype": "bf16",
-          "shape": [
-            2,
-            2,
-            1,
-            256,
-            64
-          ],
-          "stride": [
-            32768,
-            16384,
-            16384,
-            64,
-            1
-          ],
+          "shape": [1, 1, 1, 16, 32],
+          "stride": [512, 512, 512, 32, 1],
           "layout_type": "strided",
           "property_type": "undef"
         }
@@ -444,20 +264,8 @@
         {
           "id": 17,
           "dtype": "f32",
-          "shape": [
-            2,
-            2,
-            8,
-            256,
-            256
-          ],
-          "stride": [
-            1048576,
-            524288,
-            65536,
-            256,
-            1
-          ],
+          "shape": [1, 1, 2, 16, 16],
+          "stride": [512, 512, 256, 16, 1],
           "layout_type": "strided",
           "property_type": "undef"
         }
@@ -472,20 +280,8 @@
         {
           "id": 17,
           "dtype": "f32",
-          "shape": [
-            2,
-            2,
-            8,
-            256,
-            256
-          ],
-          "stride": [
-            1048576,
-            524288,
-            65536,
-            256,
-            1
-          ],
+          "shape": [1, 1, 2, 16, 16],
+          "stride": [512, 512, 256, 16, 1],
           "layout_type": "strided",
           "property_type": "undef"
         },
@@ -518,20 +314,8 @@
         {
           "id": 43,
           "dtype": "f32",
-          "shape": [
-            2,
-            2,
-            8,
-            256,
-            256
-          ],
-          "stride": [
-            1048576,
-            524288,
-            65536,
-            256,
-            1
-          ],
+          "shape": [1, 1, 2, 16, 16],
+          "stride": [512, 512, 256, 16, 1],
           "layout_type": "strided",
           "property_type": "undef"
         }
@@ -551,40 +335,16 @@
         {
           "id": 10,
           "dtype": "bf16",
-          "shape": [
-            2,
-            2,
-            8,
-            256,
-            64
-          ],
-          "stride": [
-            262144,
-            131072,
-            16384,
-            64,
-            1
-          ],
+          "shape": [1, 1, 2, 16, 32],
+          "stride": [1024, 1024, 512, 32, 1],
           "layout_type": "strided",
           "property_type": "undef"
         },
         {
           "id": 105,
           "dtype": "bf16",
-          "shape": [
-            2,
-            2,
-            8,
-            256,
-            64
-          ],
-          "stride": [
-            262144,
-            131072,
-            16384,
-            64,
-            1
-          ],
+          "shape": [1, 1, 2, 16, 32],
+          "stride": [1024, 1024, 512, 32, 1],
           "layout_type": "strided",
           "property_type": "undef"
         }
@@ -593,20 +353,8 @@
         {
           "id": 19,
           "dtype": "f32",
-          "shape": [
-            2,
-            2,
-            8,
-            256,
-            64
-          ],
-          "stride": [
-            262144,
-            131072,
-            16384,
-            64,
-            1
-          ],
+          "shape": [1, 1, 2, 16, 32],
+          "stride": [1024, 1024, 512, 32, 1],
           "layout_type": "strided",
           "property_type": "undef"
         }
@@ -632,20 +380,8 @@
         {
           "id": 19,
           "dtype": "f32",
-          "shape": [
-            2,
-            2,
-            8,
-            256,
-            64
-          ],
-          "stride": [
-            262144,
-            131072,
-            16384,
-            64,
-            1
-          ],
+          "shape": [1, 1, 2, 16, 32],
+          "stride": [1024, 1024, 512, 32, 1],
           "layout_type": "strided",
           "property_type": "undef"
         }
@@ -654,20 +390,8 @@
         {
           "id": 21,
           "dtype": "f32",
-          "shape": [
-            2,
-            2,
-            8,
-            256,
-            1
-          ],
-          "stride": [
-            4096,
-            2048,
-            256,
-            1,
-            1
-          ],
+          "shape": [1, 1, 2, 16, 1],
+          "stride": [32, 32, 16, 1, 1],
           "layout_type": "strided",
           "property_type": "undef"
         }
@@ -687,40 +411,16 @@
         {
           "id": 43,
           "dtype": "f32",
-          "shape": [
-            2,
-            2,
-            8,
-            256,
-            256
-          ],
-          "stride": [
-            1048576,
-            524288,
-            65536,
-            256,
-            1
-          ],
+          "shape": [1, 1, 2, 16, 16],
+          "stride": [512, 512, 256, 16, 1],
           "layout_type": "strided",
           "property_type": "undef"
         },
         {
           "id": 21,
           "dtype": "f32",
-          "shape": [
-            2,
-            2,
-            8,
-            256,
-            1
-          ],
-          "stride": [
-            4096,
-            2048,
-            256,
-            1,
-            1
-          ],
+          "shape": [1, 1, 2, 16, 1],
+          "stride": [32, 32, 16, 1, 1],
           "layout_type": "strided",
           "property_type": "undef"
         }
@@ -729,20 +429,8 @@
         {
           "id": 23,
           "dtype": "f32",
-          "shape": [
-            2,
-            2,
-            8,
-            256,
-            256
-          ],
-          "stride": [
-            1048576,
-            524288,
-            65536,
-            256,
-            1
-          ],
+          "shape": [1, 1, 2, 16, 16],
+          "stride": [512, 512, 256, 16, 1],
           "layout_type": "strided",
           "property_type": "undef"
         }
@@ -762,40 +450,16 @@
         {
           "id": 9,
           "dtype": "f32",
-          "shape": [
-            2,
-            2,
-            8,
-            256,
-            256
-          ],
-          "stride": [
-            1048576,
-            524288,
-            65536,
-            256,
-            1
-          ],
+          "shape": [1, 1, 2, 16, 16],
+          "stride": [512, 512, 256, 16, 1],
           "layout_type": "strided",
           "property_type": "undef"
         },
         {
           "id": 23,
           "dtype": "f32",
-          "shape": [
-            2,
-            2,
-            8,
-            256,
-            256
-          ],
-          "stride": [
-            1048576,
-            524288,
-            65536,
-            256,
-            1
-          ],
+          "shape": [1, 1, 2, 16, 16],
+          "stride": [512, 512, 256, 16, 1],
           "layout_type": "strided",
           "property_type": "undef"
         }
@@ -804,20 +468,8 @@
         {
           "id": 25,
           "dtype": "f32",
-          "shape": [
-            2,
-            2,
-            8,
-            256,
-            256
-          ],
-          "stride": [
-            1048576,
-            524288,
-            65536,
-            256,
-            1
-          ],
+          "shape": [1, 1, 2, 16, 16],
+          "stride": [512, 512, 256, 16, 1],
           "layout_type": "strided",
           "property_type": "undef"
         }
@@ -837,20 +489,8 @@
         {
           "id": 25,
           "dtype": "f32",
-          "shape": [
-            2,
-            2,
-            8,
-            256,
-            256
-          ],
-          "stride": [
-            1048576,
-            524288,
-            65536,
-            256,
-            1
-          ],
+          "shape": [1, 1, 2, 16, 16],
+          "stride": [512, 512, 256, 16, 1],
           "layout_type": "strided",
           "property_type": "undef"
         },
@@ -871,20 +511,8 @@
         {
           "id": 27,
           "dtype": "f32",
-          "shape": [
-            2,
-            2,
-            8,
-            256,
-            256
-          ],
-          "stride": [
-            1048576,
-            524288,
-            65536,
-            256,
-            1
-          ],
+          "shape": [1, 1, 2, 16, 16],
+          "stride": [512, 512, 256, 16, 1],
           "layout_type": "strided",
           "property_type": "undef"
         }
@@ -899,20 +527,8 @@
         {
           "id": 27,
           "dtype": "f32",
-          "shape": [
-            2,
-            2,
-            8,
-            256,
-            256
-          ],
-          "stride": [
-            1048576,
-            524288,
-            65536,
-            256,
-            1
-          ],
+          "shape": [1, 1, 2, 16, 16],
+          "stride": [512, 512, 256, 16, 1],
           "layout_type": "strided",
           "property_type": "undef"
         }
@@ -921,20 +537,8 @@
         {
           "id": 30,
           "dtype": "bf16",
-          "shape": [
-            2,
-            2,
-            8,
-            256,
-            256
-          ],
-          "stride": [
-            1048576,
-            524288,
-            65536,
-            256,
-            1
-          ],
+          "shape": [1, 1, 2, 16, 16],
+          "stride": [512, 512, 256, 16, 1],
           "layout_type": "strided",
           "property_type": "undef"
         }
@@ -962,40 +566,16 @@
         {
           "id": 30,
           "dtype": "bf16",
-          "shape": [
-            2,
-            2,
-            8,
-            256,
-            256
-          ],
-          "stride": [
-            1048576,
-            524288,
-            65536,
-            256,
-            1
-          ],
+          "shape": [1, 1, 2, 16, 16],
+          "stride": [512, 512, 256, 16, 1],
           "layout_type": "strided",
           "property_type": "undef"
         },
         {
           "id": 101,
           "dtype": "bf16",
-          "shape": [
-            2,
-            2,
-            1,
-            256,
-            64
-          ],
-          "stride": [
-            32768,
-            16384,
-            16384,
-            64,
-            1
-          ],
+          "shape": [1, 1, 1, 16, 32],
+          "stride": [512, 512, 512, 32, 1],
           "layout_type": "strided",
           "property_type": "undef"
         }
@@ -1004,20 +584,8 @@
         {
           "id": 31,
           "dtype": "bf16",
-          "shape": [
-            2,
-            2,
-            8,
-            256,
-            64
-          ],
-          "stride": [
-            262144,
-            131072,
-            16384,
-            64,
-            1
-          ],
+          "shape": [1, 1, 2, 16, 32],
+          "stride": [1024, 1024, 512, 32, 1],
           "layout_type": "strided",
           "property_type": "undef"
         }
@@ -1045,40 +613,16 @@
         {
           "id": 30,
           "dtype": "bf16",
-          "shape": [
-            2,
-            2,
-            8,
-            256,
-            256
-          ],
-          "stride": [
-            1048576,
-            524288,
-            65536,
-            256,
-            1
-          ],
+          "shape": [1, 1, 2, 16, 16],
+          "stride": [512, 512, 256, 16, 1],
           "layout_type": "strided",
           "property_type": "undef"
         },
         {
           "id": 100,
           "dtype": "bf16",
-          "shape": [
-            2,
-            2,
-            8,
-            256,
-            64
-          ],
-          "stride": [
-            262144,
-            131072,
-            16384,
-            64,
-            1
-          ],
+          "shape": [1, 1, 2, 16, 32],
+          "stride": [1024, 1024, 512, 32, 1],
           "layout_type": "strided",
           "property_type": "undef"
         }
@@ -1087,20 +631,8 @@
         {
           "id": 33,
           "dtype": "bf16",
-          "shape": [
-            2,
-            2,
-            8,
-            256,
-            64
-          ],
-          "stride": [
-            262144,
-            131072,
-            16384,
-            64,
-            1
-          ],
+          "shape": [1, 1, 2, 16, 32],
+          "stride": [1024, 1024, 512, 32, 1],
           "layout_type": "strided",
           "property_type": "undef"
         }
@@ -1115,20 +647,8 @@
         {
           "id": 9,
           "dtype": "f32",
-          "shape": [
-            2,
-            2,
-            8,
-            256,
-            256
-          ],
-          "stride": [
-            1048576,
-            524288,
-            65536,
-            256,
-            1
-          ],
+          "shape": [1, 1, 2, 16, 16],
+          "stride": [512, 512, 256, 16, 1],
           "layout_type": "strided",
           "property_type": "undef"
         },
@@ -1161,20 +681,8 @@
         {
           "id": 41,
           "dtype": "f32",
-          "shape": [
-            2,
-            2,
-            8,
-            256,
-            256
-          ],
-          "stride": [
-            1048576,
-            524288,
-            65536,
-            256,
-            1
-          ],
+          "shape": [1, 1, 2, 16, 16],
+          "stride": [512, 512, 256, 16, 1],
           "layout_type": "strided",
           "property_type": "undef"
         }
@@ -1200,20 +708,8 @@
         {
           "id": 33,
           "dtype": "bf16",
-          "shape": [
-            2,
-            2,
-            8,
-            256,
-            64
-          ],
-          "stride": [
-            262144,
-            131072,
-            16384,
-            64,
-            1
-          ],
+          "shape": [1, 1, 2, 16, 32],
+          "stride": [1024, 1024, 512, 32, 1],
           "layout_type": "strided",
           "property_type": "undef"
         }
@@ -1222,20 +718,8 @@
         {
           "id": 35,
           "dtype": "bf16",
-          "shape": [
-            2,
-            2,
-            1,
-            256,
-            64
-          ],
-          "stride": [
-            32768,
-            16384,
-            16384,
-            64,
-            1
-          ],
+          "shape": [1, 1, 1, 16, 32],
+          "stride": [512, 512, 512, 32, 1],
           "layout_type": "strided",
           "property_type": "undef"
         }
@@ -1250,20 +734,8 @@
         {
           "id": 41,
           "dtype": "f32",
-          "shape": [
-            2,
-            2,
-            8,
-            256,
-            256
-          ],
-          "stride": [
-            1048576,
-            524288,
-            65536,
-            256,
-            1
-          ],
+          "shape": [1, 1, 2, 16, 16],
+          "stride": [512, 512, 256, 16, 1],
           "layout_type": "strided",
           "property_type": "undef"
         }
@@ -1272,20 +744,8 @@
         {
           "id": 12,
           "dtype": "bf16",
-          "shape": [
-            2,
-            2,
-            8,
-            256,
-            256
-          ],
-          "stride": [
-            1048576,
-            524288,
-            65536,
-            256,
-            1
-          ],
+          "shape": [1, 1, 2, 16, 16],
+          "stride": [512, 512, 256, 16, 1],
           "layout_type": "strided",
           "property_type": "undef"
         }
@@ -1313,40 +773,16 @@
         {
           "id": 12,
           "dtype": "bf16",
-          "shape": [
-            2,
-            2,
-            8,
-            256,
-            256
-          ],
-          "stride": [
-            1048576,
-            524288,
-            65536,
-            256,
-            1
-          ],
+          "shape": [1, 1, 2, 16, 16],
+          "stride": [512, 512, 256, 16, 1],
           "layout_type": "strided",
           "property_type": "undef"
         },
         {
           "id": 105,
           "dtype": "bf16",
-          "shape": [
-            2,
-            2,
-            8,
-            256,
-            64
-          ],
-          "stride": [
-            262144,
-            131072,
-            16384,
-            64,
-            1
-          ],
+          "shape": [1, 1, 2, 16, 32],
+          "stride": [1024, 1024, 512, 32, 1],
           "layout_type": "strided",
           "property_type": "undef"
         }
@@ -1355,20 +791,8 @@
         {
           "id": 13,
           "dtype": "bf16",
-          "shape": [
-            2,
-            2,
-            8,
-            256,
-            64
-          ],
-          "stride": [
-            262144,
-            131072,
-            16384,
-            64,
-            1
-          ],
+          "shape": [1, 1, 2, 16, 32],
+          "stride": [1024, 1024, 512, 32, 1],
           "layout_type": "strided",
           "property_type": "undef"
         }
@@ -1394,20 +818,8 @@
         {
           "id": 13,
           "dtype": "bf16",
-          "shape": [
-            2,
-            2,
-            8,
-            256,
-            64
-          ],
-          "stride": [
-            262144,
-            131072,
-            16384,
-            64,
-            1
-          ],
+          "shape": [1, 1, 2, 16, 32],
+          "stride": [1024, 1024, 512, 32, 1],
           "layout_type": "strided",
           "property_type": "undef"
         }
@@ -1416,20 +828,8 @@
         {
           "id": 15,
           "dtype": "bf16",
-          "shape": [
-            2,
-            2,
-            1,
-            256,
-            64
-          ],
-          "stride": [
-            32768,
-            16384,
-            16384,
-            64,
-            1
-          ],
+          "shape": [1, 1, 1, 16, 32],
+          "stride": [512, 512, 512, 32, 1],
           "layout_type": "strided",
           "property_type": "undef"
         }
@@ -1437,3 +837,6 @@
     }
   ]
 }
+
+
+

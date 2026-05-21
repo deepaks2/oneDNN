@@ -1142,6 +1142,9 @@ micro_sdpa_bwd(const global KEY_DATA_T *K, const global QRY_DATA_T *Q,
     if (sg_ij < sg_per_wg_BcD) {
         tile_load(&dV_tile_slm, dV_slm, D_MAX, ugemm_kq_wg_tile_m, D_MAX,
                 sg_i0_vs, sg_j0_vs);
+		printf("[DBG][dV_loaded] g=(%zu,%zu,%zu) sg_id=%u sg_lane=%u sg_ij=%u sg_i0_vs=%u sg_j0_vs=%u d=%d k=%d\n",
+				get_group_id(0), get_group_id(1), get_group_id(2),
+				(uint)get_sub_group_id(), (uint)get_sub_group_local_id(), sg_ij, sg_i0_vs, sg_j0_vs, d, k);
         tile_store_dV(&dV_tile_slm, dV, d, k, lddv, sg_i0_vs, wg_i0 + sg_j0_vs,
                 remainder_k);
     }
@@ -1168,6 +1171,11 @@ micro_sdpa_bwd(const global KEY_DATA_T *K, const global QRY_DATA_T *Q,
     if (sg_ij < sg_per_wg_BcD) {
         tile_load(&dK_tile_slm, dK_slm, ugemm_kq_wg_tile_m, D_MAX,
                 ugemm_kq_wg_tile_m, sg_i0_dk, sg_j0_dk);
+
+		printf("[DBG][dK_loaded] g=(%zu,%zu,%zu) sg_id=%u sg_lane=%u sg_ij=%u sg_i0_dk=%u sg_j0_dk=%u d=%d k=%d wg_k_chunk=%d\n",
+				get_group_id(0), get_group_id(1), get_group_id(2),
+				(uint)get_sub_group_id(), (uint)get_sub_group_local_id(), sg_ij, sg_i0_dk, sg_j0_dk, d, k, wg_k_chunk);
+
         tile_store_dK(&dK_tile_slm, dK + wg_i0, wg_k_chunk, d, lddk, sg_i0_dk,
                 sg_j0_dk);
     }
